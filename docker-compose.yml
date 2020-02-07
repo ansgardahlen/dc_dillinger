@@ -1,0 +1,15 @@
+---
+version: "2"
+services:
+  dillinger:
+    image: linuxserver/dillinger
+    container_name: dc_dillinger
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./data/dillinger/config:/config
+    ports:
+      - 8080:8080
+    restart: unless-stopped
